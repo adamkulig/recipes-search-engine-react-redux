@@ -1,0 +1,64 @@
+@import '../../scss/base.scss';
+
+.recipe {
+  background-color: $c-white;
+  border-top: 1px solid $c-grey;
+  &--even {
+    background-color: $c-grey-light;
+  } 
+  min-height: 10rem;
+  display: grid;
+  grid-template-columns: 5fr 8fr;
+  grid-template-rows: 1.5fr repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+  "img title"
+  "img kcal"
+  "img time"
+  "img ingredients-amount";
+  font-size: 1.2rem;
+  transition: filter 0.5s;
+  &:hover,
+  &:active {
+    filter: brightness(80%);
+  }
+  &__img {
+    grid-area: img;
+    width: 100%;
+    height: auto;
+  }
+  &__icon-place {
+    grid-area: img;
+    width: 50%;
+    height: 50%;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-color: rgba($c-grey-light, 0.6);
+    align-self: flex-start;
+    justify-self: flex-start;
+  }
+  &__icon {
+    z-index: 1;
+    grid-area: img;
+    font-size: 2.5rem;
+    align-self: flex-start;
+    justify-self: flex-start;
+    margin-left: 0.2rem;
+    @include starHover;
+  }
+  &__title {
+    grid-area: title;
+    @include titleUnderline;
+  }
+
+  &__ingredients-amount {
+    grid-area: ingredients-amount;
+  }
+  &__kcal {
+    grid-area: kcal;
+  }
+  &__time {
+    grid-area: time;
+  }
+}
+

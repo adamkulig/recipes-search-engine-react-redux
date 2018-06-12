@@ -1,0 +1,19 @@
+@import '../scss/base.scss';
+
+.container {
+  max-width: 900px;
+  min-height: 100vh;
+  background-color: $c-grey-light;
+  display: grid;
+  @include media('min900') {
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba($c-grey-dark,0.5);
+  }
+  
+  grid-template-rows: 
+    [header-start] min-content 
+    [header-end nav-start] min-content 
+    [nav-end main-start] 1fr
+    [main-end footer-start] min-content 
+    [footer-end];
+}

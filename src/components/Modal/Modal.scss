@@ -1,0 +1,12 @@
+@import '../../scss/base.scss';
+
+.modal {
+  z-index: 100;
+  position: fixed;
+  @include centerByPosition;
+  // @include center;
+  background-color: rgba($c-grey-dark, 0.7);
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 7px rgba($c-black, 0.3);
+  border: 1px solid $c-grey-dark;
+}

@@ -1,0 +1,13 @@
+@import '../../scss/base.scss';
+
+.header {
+  @include center;
+  background-color: $c-primary-dark;
+  &__h1 {
+    color: $c-primary-dark-text;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding: 0.4rem 0;
+    text-transform: uppercase;
+  }
+}

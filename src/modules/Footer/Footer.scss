@@ -1,0 +1,11 @@
+@import '../../scss/base.scss';
+
+.footer {
+  @include center;
+  background-color: $c-primary-dark;
+  &__copyright {
+    color: $c-primary-dark-text;
+    font-size: 0.8rem;
+    padding: 0.1rem 0;
+  }
+}

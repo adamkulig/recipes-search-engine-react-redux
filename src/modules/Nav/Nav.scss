@@ -1,0 +1,35 @@
+@import '../../scss/base.scss';
+
+.nav {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  &__link {
+    flex: 1;
+    font-size: 1rem;
+    padding: 0.4rem 0 0.3rem 0;
+    border-bottom: solid 2px $c-grey;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: $c-grey-light;
+    transition: filter 0.5s;
+    &--selected {
+      background-color: $c-primary-light;
+      border-bottom: solid 2px $c-primary;
+    }
+    &__icon {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+      &--favorites {
+        position: relative;
+        top: -2px;
+      }
+    }
+    &:hover,
+    &:active {
+      filter: brightness(80%);
+    }
+  }
+}
