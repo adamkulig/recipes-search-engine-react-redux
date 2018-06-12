@@ -33,7 +33,6 @@ export const saveRecipesFail = (error) => {
   }
 }
 
-
 export const addToFavorite = (item) => {
   return {
     type: actionTypes.ADD_TO_FAVORITE,

@@ -50,7 +50,6 @@
     grid-area: title;
     @include titleUnderline;
   }
-
   &__ingredients-amount {
     grid-area: ingredients-amount;
   }
@@ -61,4 +60,3 @@
     grid-area: time;
   }
 }
-

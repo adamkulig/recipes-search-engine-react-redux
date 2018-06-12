@@ -13,4 +13,3 @@ export class Button extends Component {
     );
   }
 }
-

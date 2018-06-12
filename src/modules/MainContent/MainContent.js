@@ -23,7 +23,6 @@ class MainContent extends Component {
           ))}
         </div>
       </div>
-
     );
   }
 }
