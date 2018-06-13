@@ -8,18 +8,18 @@ import Spinner from '../../components/Spinner/Spinner';
 
 class MainContent extends Component {
   render() {
-    const loading = this.props.fetchingRecipes.loadingRecipes;
+    const loading = this.props.loading;
     return (
       <div className='main-content'>
         <Search />
-        { loading && 
+        {loading && (
           <Modal>
             <Spinner />
           </Modal>
-        }
+        )}
         <div className="main-content__list">
           {this.props.recipes.map((item,index) => (
-            <Recipe key={index} index={index} item={item}/>
+            <Recipe key={item.id} item={item}/>
           ))}
         </div>
       </div>
@@ -30,8 +30,8 @@ class MainContent extends Component {
 const mapStateToProps = (state) => {
   return {
     recipes: state.recipes,
-    fetchingRecipes: state.fetchingRecipes
+    loading: state.loading
   };
 }
 
-export default connect(mapStateToProps, null)(MainContent);
+export default connect(mapStateToProps)(MainContent);

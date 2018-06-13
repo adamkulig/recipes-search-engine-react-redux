@@ -27,7 +27,7 @@ export const recipesReducer = (state = initialState, action) => {
     }
     case actionTypes.REMOVE_FROM_FAVORITE: {
       return state.map(item => {
-        if (item.id === action.item.id && item.addedToFavorite) {
+        if (item.url === action.item.url && item.addedToFavorite) {
           return {
             ...item,
             addedToFavorite: false

@@ -13,8 +13,7 @@ export class RecipeDetails extends Component {
 
   getRecipe = (recipeId) => {
     const { recipes, favorites } = this.props;
-    let recipe;
-    recipe = recipes.find(item => item.id === Number(recipeId));
+    let recipe = recipes.find(item => item.id === Number(recipeId));
     if (!recipe){
       recipe = favorites.find(item => item.id === Number(recipeId));
     }
@@ -43,7 +42,10 @@ export class RecipeDetails extends Component {
           {ingredients.map((ingredient, index) => (
             <p 
               key={index}
-              className={classNames('recipe-details__ingredients__item', (index % 2 === 0) && 'recipe-details__ingredients__item--even')} 
+              className={classNames(
+                'recipe-details__ingredients__item', 
+                (index % 2 === 0) && 'recipe-details__ingredients__item--even'
+              )} 
             >
               {ingredient}
             </p>
@@ -62,11 +64,11 @@ const mapStateToProps = (state) => {
     recipes: state.recipes,
     favorites: state.favorites
   };
-}
+};
 
-const mapDispatchToProps = (dispatch) => ({
-  onAddToFavorite: (recipe) => dispatch(actionCreators.addToFavorite(recipe)),
-  onRemoveFromFavorite: (recipe) => dispatch(actionCreators.removeFromFavorite(recipe)),
-});
+const mapDispatchToProps = {
+  onAddToFavorite: actionCreators.addToFavorite,
+  onRemoveFromFavorite: actionCreators.removeFromFavorite
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeDetails);

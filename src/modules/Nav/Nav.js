@@ -22,7 +22,7 @@ const Nav = () => {
         <span className="nav__link__icon nav__link__icon--favorites"><IoIosStar /></span>favorites
       </NavLink>
     </nav>
-  )
+  );
 }
 
 export default Nav;

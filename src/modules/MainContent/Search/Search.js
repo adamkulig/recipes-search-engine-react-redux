@@ -21,20 +21,20 @@ export class Search extends Component {
     this.props.onSaveRecipes(ingredients, kcal);
   }
 
-  enterClicked = (event) => {
+  keyUp = (event) => {
     if (event.keyCode === ENTER_KEY_CODE) {
       this.search();
     }
   }
 
-  ingredients = (event) => {
+  ingredientsInputChangeHandler = (event) => {
     const value = event.target.value;
     this.setState({
       ingredients: value
     });
   }
 
-  kcal = (event) => {
+  kcalInputChangeHandler = (event) => {
     const value = event.target.value;
     this.setState({ kcal: value });
   }
@@ -46,15 +46,15 @@ export class Search extends Component {
           text='ingredients'
           className='search__form' 
           placeholder='beef,onions,beans' 
-          onChange={this.ingredients} 
-          onKeyUp={this.enterClicked} 
+          onChange={this.ingredientsInputChangeHandler} 
+          onKeyUp={this.keyUp} 
         />
         <Form 
           text='calories per serving (optional)'
           className='search__form'
           placeholder='300-800'
-          onChange={this.kcal}
-          onKeyUp={this.enterClicked} 
+          onChange={this.kcalInputChangeHandler}
+          onKeyUp={this.keyUp} 
         />
         <Button text='GIVE ME RECIPES!' onClick={this.search} />
       </div>
@@ -65,16 +65,11 @@ export class Search extends Component {
 const mapStateToProps = (state) => {
   return {
     recipes: state.recipes,
-    fetchingRecipes: state.fetchingRecipes
   };
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  onSaveRecipes: (ingredients, kcal) => dispatch(actionCreators.saveRecipes(ingredients, kcal)),
-});
-
-// const mapDispatchToProps = {
-//   onSaveRecipesInStore: actionCreators.saveRecipes
-// };
+const mapDispatchToProps = {
+  onSaveRecipes: actionCreators.saveRecipes
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

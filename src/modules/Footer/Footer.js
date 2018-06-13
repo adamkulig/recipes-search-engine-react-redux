@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <span className="footer__copyright">Copyright Ⓒ Adam Kulig 2018</span>
     </footer>
-  )
+  );
 }
 
 export default Footer;

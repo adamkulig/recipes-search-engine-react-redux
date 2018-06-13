@@ -14,14 +14,14 @@ export class Recipe extends Component {
     const { onAddToFavorite, onRemoveFromFavorite } = this.props;
     event.preventDefault();
     addedToFavorite 
-    ? onRemoveFromFavorite(recipe)
-    : onAddToFavorite(recipe);
-  }
+      ? onRemoveFromFavorite(recipe)
+      : onAddToFavorite(recipe);
+  };
 
   render(){
-  const recipe = this.props.item;
-  const { id, label, ingredients, img, calories, totalTime, addedToFavorite } = recipe;
-  const isEvenRecipe = id % 2 === 0;
+    const recipe = this.props.item;
+    const { id, label, ingredients, img, calories, totalTime, addedToFavorite } = recipe;
+    const isEvenRecipe = id % 2 === 0;
     return (
       <Link to={`/recipe/${id}`}>
         <div 
@@ -47,10 +47,5 @@ const mapDispatchToProps = {
   onAddToFavorite: actionCreators.addToFavorite,
   onRemoveFromFavorite: actionCreators.removeFromFavorite
 };
-
-// const mapDispatchToProps = (dispatch) => ({
-//   onAddToFavorite: (recipe) => dispatch(actionCreators.addToFavorite(recipe)),
-//   onRemoveFromFavorite: (recipe) => dispatch(actionCreators.removeFromFavorite(recipe)),
-// });
 
 export default connect(null, mapDispatchToProps)(Recipe);

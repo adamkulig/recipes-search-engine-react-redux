@@ -9,22 +9,19 @@ export const favoritesReducer = (state = initialState, action) => {
         ...action.item,
         addedToFavorite: true
       }
-      state.map(item => {
-        const theSameRecipe = (
-          item.title === recipe.title 
-          && item.ingredients === recipe.ingredients
-        )
-        if (theSameRecipe) {
-          return state;
-        }
-      })
-      return state = [...state, recipe];
+      const duplicateRecipe = state.some(item => item.label === recipe.label && item.url === recipe.url);
+      if (duplicateRecipe) {
+        return state
+      } else {
+        return state = [...state, recipe]
+      }
     case actionTypes.REMOVE_FROM_FAVORITE:
-      return state = state.filter(item => !(
-          item.title === action.item.title 
-          && item.ingredients === action.item.ingredients
+      const filteredState = state.filter(item => !(
+          item.label === action.item.label 
+          && item.url === action.item.url
         )
       )
+      return filteredState;
     default:
       return state;
   }

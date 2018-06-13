@@ -16,6 +16,6 @@ const Spinner = () => (
     <div className="sk-circle11 sk-circle"></div>
     <div className="sk-circle12 sk-circle"></div>
   </div>
-)
+);
 
 export default Spinner;

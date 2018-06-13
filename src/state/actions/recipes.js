@@ -5,12 +5,12 @@ import { APP_ID, APP_KEY } from '../../api/passwords';
 export const saveRecipes = (ingredients, kcal) => {
   return dispatch => {
     dispatch(saveRecipesStart());
-    const kcalFilled = (kcal.length > 0 ) && `&calories=${kcal}`;
+    const kcalFilled = kcal.length > 0 && `&calories=${kcal}`;
     const url = `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${APP_KEY}&q=${ingredients}&${kcalFilled}`;
     fetchRecipes(url)
       .then(json => dispatch(saveRecipesSuccess(json)))
       .catch(error => dispatch(saveRecipesFail(error)))
-  }
+  };
 }
 
 export const saveRecipesStart = () => {
