@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&amp;subset=latin-ext');
+@import './scss/base.scss';
+
+*, *:before, *:after {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  @include media('min450') {
+    font-size: 15px;
+  }
+  @include media('min600') {
+    font-size: 18px;
+  }
+  @include media('min750') {
+    font-size: 20px;
+  }
+  @include media('min900') {
+    font-size: 22px;
+  }
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to right, 
+    lighten($c-primary-light, 25%), 
+    $c-white, 
+    lighten($c-primary-light, 25%)
+  )
+}
+
+p {
+  color: $c-grey-dark;
+}
+
+a {
+  color: $c-black;
+  text-decoration: none;
+}
