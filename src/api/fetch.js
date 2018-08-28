@@ -1,6 +1,3 @@
-// const kcalFilled = (kcal.length > 0 ) && `&calories=${kcal}`;
-// const url = `https://api.edamam.com/search?app_id=${APP_ID}&app_key=${APP_KEY}&q=${ingredients}&${kcalFilled}`;
-
 const pullingSelectedData = (json) => json.hits.map(
   hit => ({
     label: hit.recipe.label,

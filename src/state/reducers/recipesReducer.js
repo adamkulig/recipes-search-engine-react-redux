@@ -6,13 +6,18 @@ const initialState = [];
 export const recipesReducer = (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.SAVE_RECIPES_SUCCESS: {
-      return state = action.items.map(item => {
+      const newRecipes = action.items.map(item => {
         return {
           ...item,
           id: getId(),
           addedToFavorite: false
         }
       });
+      if (action.isNewSearch) {
+        return state = newRecipes
+      } else {
+        return state = [...state, ...newRecipes];
+      }
     }
     case actionTypes.ADD_TO_FAVORITE: {
       return state.map(item => {

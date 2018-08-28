@@ -18,6 +18,6 @@ Capabilities:
 - adding to favorites
 - deleting from favorites
 - showing details
-- auto-loading (in progress...)
+- auto-loading recipes after scroll down
 
 Date: 06.2018
