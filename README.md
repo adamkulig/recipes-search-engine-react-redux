@@ -1,9 +1,23 @@
-Recipes Serach Engine
+My third project with React.js
 
--create-react-app 
--React.js 
--Redux
--SCSS 
--Javascript (ES6) 
--RWD
--CSS Grid
+It's a simple recipe search engine. 
+
+ I used:
+- Create-react-app 
+- React.js 
+- Redux
+- Redux-thunk
+- React-router
+- SCSS (RWD)
+- Javascript (ES6) 
+- CSS Grid
+- Api from edamam.com
+
+Capabilities:
+- fetch recipes
+- adding to favorites
+- deleting from favorites
+- showing details
+- auto-loading (in progress...)
+
+Date: 06.2018
