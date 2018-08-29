@@ -11,17 +11,17 @@ import * as actionCreators from '../../state/actions/index';
 class MainContent extends Component {
   loadMore = () => {
     const lastRecipe = this.props.recipes.length;
-    const { ingredients, kcal, spinner } = this.props.loading;
+    const { ingredients, kcal, spinnerIsWorking } = this.props.loading;
     const isNewSearch = false;
-    !spinner && this.props.onSaveRecipes(ingredients, kcal, lastRecipe, isNewSearch);
+    !spinnerIsWorking && this.props.onSaveRecipes(ingredients, kcal, lastRecipe, isNewSearch);
   }
   render() {
-    const { spinner } = this.props.loading;
+    const { spinnerIsWorking } = this.props.loading;
     const recipesAreShown = this.props.recipes.length !== 0;
     return (
       <div className='main-content'>
         <Search />
-        {spinner && (
+        {spinnerIsWorking && (
           <Modal>
             <Spinner />
           </Modal>
@@ -29,7 +29,7 @@ class MainContent extends Component {
         <InfiniteScroll
           pageStart={0}
           loadMore={this.loadMore}
-          hasMore={!spinner && recipesAreShown}>
+          hasMore={!spinnerIsWorking && recipesAreShown}>
           <div className="main-content__list">
             {this.props.recipes.map(item => (
               <Recipe key={item.id} item={item}/>
