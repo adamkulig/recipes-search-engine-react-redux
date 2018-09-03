@@ -2,7 +2,10 @@ My fourth project with React.js
 
 It's a simple recipe search engine. 
 
- I used:
+GitHub Pages:
+https://adamkulig.github.io/recipes-search-engine-react-redux/
+
+I used:
 - Create-react-app 
 - React.js 
 - Redux
